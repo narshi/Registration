@@ -19,9 +19,25 @@ FirstName(){
  fi
 }
 
+EmailValidation(){
+regex="^(([-a-zA-Z0-9\!#\$%\&\'*+/=?^_`{\|}~]+|(\"([][,:;<>\&@a-zA-Z0-9\!#\$%\&\'*+/=?^_`{\|}~-]|(\\\\[\\ \"]))+\"))\.)*([-a-zA-Z0-9\!#\$%\&\'*+/=?^_`{\|}~]+|(\"([][,:;<>\&@a-zA-Z0-9\!#\$%\&\'*+/=?^_`{\|}~-]|(\\\\[\\ \"]))+\"))@\w((-|\w)*\w)*\.(\w((-|\w)*\w)*\.)*\w{2,4}$"
+
+if [[ $1 =~ $regex ]]
+then
+    echo "OK"
+else
+    echo "Please enter a valid email"
+fi
+
+}
+
+
 echo "Enter First Name "
 read firstName
 FirstName $firstName
 echo "Enter second Name"
 read secName
 FirstName $secName
+echo "Enter Email "
+read email
+EmailValidation $email
