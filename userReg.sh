@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash 
 
 echo "Welcome to portal registration"
  
@@ -9,13 +9,13 @@ FirstName(){
 	if [[ ${#firstName} < 3 ]]
 	then
 		echo "First name must be at least 3 digits"
-		break
+		exit
 	else
 		echo "First name done"
 	fi 
  else
 	echo "First letter must be capital"
-	break
+	exit
  fi
 }
 
